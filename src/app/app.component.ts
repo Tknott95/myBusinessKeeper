@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { AngularFire, FirebaseListObservable } from 'angularfire2';
 import { FirebaseService } from './services/firebase.service';
+import { Business } from './models/Business';
+import { Category } from './models/Category';
 
 
 @Component({
@@ -10,20 +11,19 @@ import { FirebaseService } from './services/firebase.service';
   providers: [FirebaseService]
 })
 export class AppComponent implements OnInit {
-    items: FirebaseListObservable<any[]>;
+    businesses: Business[];
+    categories: Category[];
 
-    constructor(private _firebaseService:FirebaseService) {
-       
-    }
+    constructor(private _firebaseService: FirebaseService) { }
 
     ngOnInit(){
 
       this._firebaseService.getBusinesses().subscribe(businesses => {
-        console.log(businesses);
+        this.businesses = businesses;
       });
 
       this._firebaseService.getCategory().subscribe(categories => {
-        console.log(categories);
+        this.categories = categories;
       });
 
     }
