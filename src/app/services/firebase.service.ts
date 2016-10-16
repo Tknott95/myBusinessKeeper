@@ -15,7 +15,7 @@ export class FirebaseService {
 
 
     getBusinesses() {
-        this.businesses = this._af.database.list('/businesses') as
+        this.businesses = this._af.database.list('/businesses/businesses/0') as
         FirebaseListObservable<Business[]>;
 
         return this.businesses;
