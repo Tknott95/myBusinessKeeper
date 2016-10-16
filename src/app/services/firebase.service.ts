@@ -37,6 +37,10 @@ export class FirebaseService {
 
         return this.categories;
     }
+
+    addBusiness(newBusiness){
+        return this.businesses.push(newBusiness);
+    }
 }
 
 
