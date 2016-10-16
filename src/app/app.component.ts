@@ -32,12 +32,22 @@ export class AppComponent implements OnInit {
 
     changeState(state, key) {
       console.log('Changing state to: ' + state);
-      if(key) {
+      if (key) {
         console.log('Changing key to: ' + key);
         this.activeKey = key;
       }
       this.appState = state;
     }
+
+    filterCategory(category){
+       this._firebaseService.getBusinesses(category).subscribe(businesses => {
+        this.businesses = businesses;
+      });
+
+
+    }
+
+
 
 
 }

@@ -18,7 +18,8 @@
   </div>
   <div class="large-6 columns">
     <label> Filter Category
-        <select>
+      <!-- whatever value is selected is put into filterCatgeory function -->
+        <select (change)="filterCategory(filteredCategory.value)" #filteredCategory>
           <option value="0">Select</option>
           <option *ngFor="let category of categories" value="{{category.name}}">{{category.name}}</option>
         </select>
