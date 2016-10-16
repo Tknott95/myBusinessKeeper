@@ -169,7 +169,7 @@
             <td>{{business.phone}}</td>
             <td>
               <button class="button" (click)="changeState('extend', business.$key)">More</button>
-              <button class="button secondary">Edit</button>
+              <button (click)="showEdit(business)" class="button secondary">Edit</button>
               <button class="button alert">Delete</button>
 
 

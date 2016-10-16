@@ -16,6 +16,18 @@ export class AppComponent implements OnInit {
     appState: string;
     activeKey: string;
 
+    activeCompany: string;
+    activeCategory: string;
+    activeYearsInBusiness: string;
+    activeDescription: string;
+    activePhone: string;
+    activeEmail: string;
+    activeStreetAddress: string;
+    activeCity: string;
+    activeState: string;
+    activeZipcode: string;
+
+
     constructor(private _firebaseService: FirebaseService) { }
 
     ngOnInit() {
